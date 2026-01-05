@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>線上報名｜2026 國際醫學教育研討會</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 主樣式 -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Font Awesome（全站共用） -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+  />
+
+  <!-- BeClass iframe RWD 微調（僅此頁使用） -->
+  <style>
+    .iframe-wrapper {
+      margin-top: 40px;
+    }
+
+    .iframe-container {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .iframe-container iframe {
+      width: 100%;
+      height: 1245px;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .iframe-container iframe {
+        height: 1500px;
+      }
+    }
+
+    /* 報名注意事項（維持你原本設計，但不再自己給白底） */
+    .notice-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green-dark);
+      margin-bottom: 20px;
+    }
+
+    .notice-title i {
+      color: var(--green-main);
+      font-size: 1.4rem;
+    }
+
+    .notice-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 10px;
+    }
+
+    .notice-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+      color: #2f3e34;
+    }
+
+    .notice-list i {
+      color: var(--green-main);
+      font-size: 1.1rem;
+      margin-top: 4px;
+    }
+
+    .notice-highlight {
+      background: var(--green-light);
+      border-left: 5px solid var(--green-main);
+      padding: 14px 16px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===== Header（共用） ===== -->
+<div id="site-header"></div>
+
+<!-- ================= 線上報名 ================= -->
+<section class="section">
+  <div class="container glass-box">
+
+    <h1>線上報名</h1>
+    <p>請詳閱以下報名注意事項，並於下方完成線上報名。</p>
+
+    <hr style="margin: 30px 0;" />
+
+    <!-- ===== 報名注意事項 ===== -->
+    <div class="notice-box">
+
+      <div class="notice-title">
+        <i class="fa-solid fa-circle-info"></i>
+        <h3>報名注意事項 Registration Information</h3>
+      </div>
+
+      <ul class="notice-list">
+        <li>
+          <i class="fa-solid fa-calendar-days"></i>
+          <span>
+            <strong>報名期限：</strong>
+            即日起至 <strong>2026 年 01 月 23 日</strong> 止，名額有限，額滿即提前截止。
+          </span>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+          <span>
+            <strong>現場參加（Onsite）：</strong><br />
+            義大癌治療醫院 六樓大講堂
+          </span>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-video"></i>
+          <span>
+            <strong>線上視訊（Online）：</strong><br />
+            報名完成後，將於會議前兩天以 Email 寄送視訊連結。
+          </span>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-envelope-open-text"></i>
+          <span>
+            報名成功後，系統將自動寄送 <strong>報名確認信</strong> 至您填寫的電子郵件信箱。
+          </span>
+        </li>
+      </ul>
+
+      <div class="notice-highlight">
+        <i class="fa-solid fa-leaf"></i>
+        本研討會採 <strong>現場</strong> 與 <strong>線上視訊</strong> 兩種方式辦理，
+        請於報名表單中擇一參加。
+      </div>
+
+    </div>
+    
+    <!-- ===== 手機填寫提醒 ===== -->
+<div class="notice-highlight" style="margin-top: 30px;">
+  <i class="fa-solid fa-mobile-screen-button"></i>
+  如果您覺得在<strong>手機</strong>上直接填寫本頁的報名表單不太方便，
+  也可以透過下方連結進入表單完成報名：<br /><br />
+  <a href="https://www.beclass.com/rid=3050257694a0a431c9e5"
+     target="_blank"
+     style="color: var(--green-dark); font-weight: bold;">
+    👉 點此開啟報名表單（另開新視窗）
+  </a>
+</div>
+
+
+    <!-- ===== BeClass 報名表 ===== -->
+    <div class="iframe-wrapper">
+      <div class="iframe-container">
+        <iframe
+          src="https://www.beclass.com/m/showregist.php?regist_id=MzA1MDI1NzY5NGEwYTQzMWM5ZTU6U2hvd0Zvcm0="
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== Footer（共用） ===== -->
+<div id="site-footer"></div>
+<script src="js/include.js"></script>
+
+</body>
+</html>

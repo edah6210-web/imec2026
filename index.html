@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medical Education Conference 2026</title>
+
+  <!-- 主樣式 -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+  />
+</head>
+
+<body>
+
+<!-- ===== Header (include) ===== -->
+<div id="site-header"></div>
+
+<!-- ================= Hero ================= -->
+<section class="hero hero-split hero-light">
+  <div class="hero-inner">
+
+    <!-- 左側：白卡文字 -->
+    <div class="hero-card glass-box">
+      <h1>全球視野、在地實踐</h1>
+      <h1>醫學教育與教育研究的趨勢</h1>
+
+      <h2>
+        From globalization to glocalization : current trends in medical education
+        and educational research for adapting international standards to local needs
+      </h2>
+
+            <p class="event-info">
+        <i class="fa-regular fa-calendar"></i> 2026/01/31 (SAT)<br />
+        <i class="fa-solid fa-location-dot"></i> 義大癌治療醫院 六樓大講堂
+      </p>
+
+      <!-- 倒數計時 -->
+      <div class="countdown">
+        <div class="time-box">
+          <span id="days">00</span>
+          <small>Days</small>
+        </div>
+        <div class="time-box">
+          <span id="hours">00</span>
+          <small>Hours</small>
+        </div>
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <small>Minutes</small>
+        </div>
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <small>Seconds</small>
+        </div>
+      </div>
+
+      <a href="registration.html" class="btn">
+        <i class="fa-solid fa-pen-to-square"></i> 立即報名
+      </a>
+    </div>
+
+    <!-- 右側：插圖 -->
+    <div class="hero-image">
+      <img
+        src="assets/images/hero-medical-illustration.jpg"
+        alt="Medical Education Illustration"
+      />
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= 最新消息 ================= -->
+<section class="section">
+  <div class="container glass-box">
+    <h2>最新消息</h2>
+    <div id="news-list"></div>
+  </div>
+</section>
+
+<!-- ================= 主辦 / 協辦 ================= -->
+<section class="section">
+  <div class="container glass-box">
+
+    <h2 class="section-title">主辦單位</h2>
+    <div class="logo-grid">
+      <img src="assets/logo/義大醫院.png" alt="義大醫院">
+      <img src="assets/logo/義守大學醫學院.png" alt="義守大學醫學院">
+    </div>
+
+    <h2 class="section-title">協辦單位</h2>
+    <div class="logo-grid">
+      <img src="assets/logo/台灣醫學教育學會.png" alt="台灣醫學教育學會">
+      <img src="assets/logo/義大癌治療醫院.png" alt="義大癌治療醫院">
+      <img src="assets/logo/義大大昌醫院.png" alt="義大大昌醫院">
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= 倒數計時 ================= -->
+<script>
+  const targetDate = new Date("2026-01-31T09:00:00").getTime();
+  const timer = setInterval(updateCountdown, 1000);
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) {
+      clearInterval(timer);
+      return;
+    }
+
+    document.getElementById("days").innerText =
+      Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerText =
+      Math.floor((distance / (1000 * 60 * 60)) % 24);
+    document.getElementById("minutes").innerText =
+      Math.floor((distance / (1000 * 60)) % 60);
+    document.getElementById("seconds").innerText =
+      Math.floor((distance / 1000) % 60);
+  }
+
+  updateCountdown();
+</script>
+
+<!-- ================= 最新消息 JSON / Accordion ================= -->
+<script src="js/news.js"></script>
+
+<!-- ================= Header 行為控制 ================= -->
+<script>
+  /* Header 捲動玻璃效果 */
+  window.addEventListener("scroll", () => {
+    const header = document.querySelector("#site-header header");
+    if (!header) return;
+
+    if (window.scrollY > 80) {
+      header.classList.add("header-glass");
+      header.classList.remove("header-transparent");
+    } else {
+      header.classList.add("header-transparent");
+      header.classList.remove("header-glass");
+    }
+  });
+
+  /* 手機版 Menu Toggle */
+  document.addEventListener("click", (e) => {
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("nav.main-nav");
+
+    if (!toggle || !nav) return;
+    if (toggle.contains(e.target)) {
+      nav.classList.toggle("active");
+    }
+  });
+</script>
+
+<!-- ===== Footer (include) ===== -->
+<div id="site-footer"></div>
+<script src="js/include.js"></script>
+
+</body>
+</html>
