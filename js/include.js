@@ -1,31 +1,24 @@
 /* =========================
    HTML Include Loader
-   For Multi-page Static Site
 ========================= */
 
-const BASE_PATH = ""; 
-// 若之後部署在子目錄，例如：/conference2026
-// 改成：const BASE_PATH = "/conference2026/";
+const BASE_PATH = ""; // GitHub Pages 用空字串
 
 function loadHTML(id, file) {
   const target = document.getElementById(id);
-  if (!target) {
-    console.warn(`⚠️ include.js: Element #${id} not found`);
-    return;
-  }
+  if (!target) return;
 
-  fetch(`${BASE_PATH}/${file}`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Failed to load ${file}`);
-      }
-      return response.text();
+  // ⭐⭐⭐ 重點在這一行 ⭐⭐⭐
+  fetch(`${BASE_PATH}${file}`)
+    .then(res => {
+      if (!res.ok) throw new Error(`Failed to load ${file}`);
+      return res.text();
     })
     .then(html => {
       target.innerHTML = html;
     })
-    .catch(error => {
-      console.error("❌ include.js error:", error);
+    .catch(err => {
+      console.error("include error:", err);
     });
 }
 
