@@ -1,9 +1,23 @@
 /* =========================
    HTML Include Loader
-   GitHub Pages Repo-safe Version
+   Auto Base Path (Local / GitHub Pages)
 ========================= */
 
-const BASE_PATH = "/imec2026/"; // ⭐⭐⭐ 一定要是 repo 名稱 ⭐⭐⭐
+function getBasePath() {
+  const { hostname, pathname } = window.location;
+
+  // GitHub Pages（repo 模式）
+  if (hostname.endsWith("github.io")) {
+    const repo = pathname.split("/")[1];
+    return `/${repo}/`;
+  }
+
+  // 本機 or 自訂網域
+  return "";
+}
+
+const BASE_PATH = getBasePath();
+// console.log("BASE_PATH =", BASE_PATH); // 除錯用
 
 function loadHTML(id, file) {
   const target = document.getElementById(id);
@@ -11,17 +25,13 @@ function loadHTML(id, file) {
 
   fetch(`${BASE_PATH}${file}`)
     .then(res => {
-      if (!res.ok) {
-        throw new Error(`Failed to load ${BASE_PATH}${file}`);
-      }
+      if (!res.ok) throw new Error(`Failed to load ${file}`);
       return res.text();
     })
     .then(html => {
       target.innerHTML = html;
     })
-    .catch(err => {
-      console.error("include.js error:", err);
-    });
+    .catch(err => console.error("include.js error:", err));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
