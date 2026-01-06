@@ -407,17 +407,19 @@ header {
 .title-main {
   font-weight: 700;
   background: linear-gradient(
-    135deg,
-    #2fa36b,
-    #1f6f4a
+    110deg,
+    #0f5c4c 0%,
+    #2fa36b 42%,
+    #c9a24d 50%,  /* 極淡醫學金 */
+    #2fa36b 58%,
+    #1f6f4a 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-
 .text-logo .title-sub {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   color: #5c7f73;
   letter-spacing: 0.4px;
 }
@@ -441,4 +443,148 @@ header {
   body {
     background-attachment: scroll;
   }
+}
+
+
+/* ================= News Accordion (FIXED) ================= */
+
+.news-item {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.news-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  cursor: pointer;
+  align-items: start;
+}
+
+.news-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 90px;
+}
+
+.news-date {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.news-tag {
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: bold;
+  width: fit-content;
+}
+
+.news-tag.new {
+  background: #ffcc00;
+  color: #003366;
+}
+
+.news-tag.important {
+  background: #c62828;
+  color: #fff;
+}
+
+.news-title {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.news-toggle {
+  font-size: 1.1rem;
+  color: #666;
+  transition: transform 0.3s ease;
+}
+
+/* 收合內容 */
+.news-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding-left: 102px; /* 對齊標題 */
+}
+
+/* 展開 */
+.news-item.open .news-body {
+  max-height: 800px; /* ✔ 實務夠用 */
+  margin-top: 10px;
+}
+
+.news-item.open .news-toggle {
+  transform: rotate(45deg); /* + 變 × */
+}
+
+.timeline-content p {
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+
+
+
+/* =====================================================
+   NEWS – Mobile Card Style
+===================================================== */
+@media (max-width: 768px) {
+
+  .news-item {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 16px;
+    border: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  }
+
+  .news-header {
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+  }
+
+  .news-meta {
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    min-width: auto;
+  }
+
+  .news-date {
+    font-size: 0.8rem;
+  }
+
+  .news-tag {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+  }
+
+  .news-title {
+    grid-column: 1 / -1;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 6px;
+  }
+
+  .news-toggle {
+    align-self: flex-start;
+    font-size: 1.2rem;
+  }
+
+  .news-body {
+    padding-left: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .news-item.open .news-body {
+    margin-top: 12px;
+  }
+
+s
+
 }
