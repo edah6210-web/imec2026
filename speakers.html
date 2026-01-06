@@ -99,7 +99,44 @@
 <div id="site-footer"></div>
 <script src="js/include.js"></script>
 
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector("header");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("nav.main-nav");
+
+    // ===== Header scroll glass effect =====
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        header.classList.remove("header-transparent");
+        header.classList.add("header-glass");
+      } else {
+        header.classList.remove("header-glass");
+        header.classList.add("header-transparent");
+      }
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    // ===== Mobile menu toggle =====
+    if (menuToggle && nav) {
+      menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+
+      // 點選選單後自動收合
+      nav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+        });
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
+
 
 
