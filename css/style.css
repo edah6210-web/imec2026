@@ -565,3 +565,63 @@ header .header-inner {
   background: #e6f7f3;
   color: #0f5c4c;
 }
+
+/* =========================
+   手機版 Header 最終修正
+========================= */
+@media (max-width: 768px) {
+
+  /* Header 整體 */
+  header {
+    padding: 14px 16px;
+  }
+
+  /* Header 內層排列 */
+  header .header-inner,
+  .navbar {
+    align-items: center;
+  }
+
+  /* Logo：強制單行、不換行 */
+  .logo {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  /* 隱藏桌機版 icon + 文字混排 */
+  nav.main-nav ul {
+    flex-direction: column;
+  }
+
+  nav.main-nav a {
+    font-size: 1rem;
+    padding: 14px 0;
+  }
+
+  /* 導覽 icon 在手機版不顯示（只留文字） */
+  nav.main-nav i {
+    display: none;
+  }
+
+  /* Menu 展開時樣式 */
+  nav.main-nav.active {
+    margin-top: 12px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+}
+
+/* =========================
+   手機版白卡修正
+========================= */
+@media (max-width: 768px) {
+  .glass-box {
+    padding: 28px 22px;
+    border-radius: 16px;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+}
+
