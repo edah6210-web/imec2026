@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>講者介紹｜2026 國際醫學教育研討會</title>
+  <title>Speakers｜2026 International Medical Education Conference</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- 主樣式 -->
+  <!-- 主樣式（沿用全站） -->
   <link rel="stylesheet" href="css/style.css" />
 
   <!-- Font Awesome -->
@@ -14,95 +14,258 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     crossorigin="anonymous"
   />
+
+  <!-- Speakers 專用樣式 -->
+  <style>
+    /* =============================
+       PAGE HERO
+    ============================== */
+    .page-hero {
+      text-align: center;
+      padding: 120px 20px 80px;
+      color: #ffffff;
+    }
+
+    .page-hero h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .page-subtitle {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* =============================
+       SPEAKERS SECTION
+    ============================== */
+    .speakers-section {
+      padding: 80px 0;
+    }
+
+    .speaker-group-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 0 0 32px;
+      color: #1f6f4a;
+    }
+
+    .speaker-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      margin-bottom: 80px;
+    }
+
+    /* =============================
+       SPEAKER CARD
+    ============================== */
+    .speaker-card {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .speaker-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+    }
+
+    .speaker-photo {
+      position: relative;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+    }
+
+    .speaker-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* =============================
+       BADGES
+    ============================== */
+    .badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .badge.keynote {
+      background: linear-gradient(135deg, #ffcc00, #ffd966);
+      color: #003366;
+    }
+
+    .badge.international {
+      background: #2fa36b;
+      color: #ffffff;
+    }
+
+    /* =============================
+       INFO
+    ============================== */
+    .speaker-info {
+      padding: 20px 22px 26px;
+    }
+
+    .speaker-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .speaker-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1f6f4a;
+    }
+
+    .speaker-affiliation {
+      font-size: 0.9rem;
+      color: #555;
+      margin: 6px 0 14px;
+    }
+
+    .speaker-topic {
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .speaker-topic i {
+      margin-right: 6px;
+      color: #2fa36b;
+    }
+
+    /* =============================
+       RESPONSIVE
+    ============================== */
+    @media (max-width: 768px) {
+      .page-hero {
+        padding: 100px 16px 60px;
+      }
+
+      .page-hero h1 {
+        font-size: 2rem;
+      }
+
+      .speaker-group-title {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ===== Header（共用） ===== -->
+  <!-- 共用 Header（你原本的 header 直接 include / 貼上即可） -->
+  <!-- ================= HEADER ================= -->
+  <!-- <header>...</header> -->
 <div id="site-header"></div>
+  <!-- HERO -->
+  <section class="page-hero">
+    <h1>Speakers</h1>
+    <p class="page-subtitle">
+      International & Domestic Distinguished Speakers
+    </p>
+  </section>
 
-<!-- ================= 講者介紹 ================= -->
-<section class="section">
-  <div class="container glass-box">
+  <!-- SPEAKERS -->
+  <section class="speakers-section container">
 
-    <h1>講者介紹</h1>
-    <p>本研討會邀請多位國內外醫學教育專家進行專題演講與經驗分享。</p>
+    <!-- ================= KEYNOTE ================= -->
+    <h2 class="speaker-group-title">Keynote Speaker</h2>
 
-    <hr style="margin: 30px 0;" />
+    <div class="speaker-grid">
+      <div class="speaker-card">
+        <div class="speaker-photo">
+          <img src="assets/speakers/laura-edgar.jpg" alt="Laura Edgar">
+          <span class="badge keynote">Keynote</span>
+        </div>
 
-    <!-- ===== Keynote Speakers ===== -->
-    <h2>Keynote Speakers</h2>
+        <div class="speaker-info">
+          <h3 class="speaker-name">Laura Edgar, EdD</h3>
+          <p class="speaker-title">Vice President</p>
+          <p class="speaker-affiliation">
+            Accreditation Council for Graduate Medical Education (ACGME)
+          </p>
+          <p class="speaker-topic">
+            <i class="fa-solid fa-microphone-lines"></i>
+            Clinician Educator Milestones: Global Implementation
+          </p>
+        </div>
+      </div>
+    </div>
 
-    <div class="speakers-grid">
+    <!-- ================= INTERNATIONAL ================= -->
+    <h2 class="speaker-group-title">International Speakers</h2>
+
+    <div class="speaker-grid">
 
       <div class="speaker-card">
         <div class="speaker-photo">
-          <img src="images/speakers/speaker1.jpg" alt="Prof. XXX">
+          <img src="assets/speakers/speaker-1.jpg" alt="International Speaker">
+          <span class="badge international">International</span>
         </div>
-        <div class="speaker-name">Prof. XXX</div>
-        <div class="speaker-title">
-          Department of Medical Education<br>
-          University / Institution
+        <div class="speaker-info">
+          <h3 class="speaker-name">John Smith, MD</h3>
+          <p class="speaker-title">Professor of Medical Education</p>
+          <p class="speaker-affiliation">University of Global Health</p>
+          <p class="speaker-topic">
+            <i class="fa-solid fa-microphone-lines"></i>
+            Faculty Development in CBME
+          </p>
         </div>
-        <span class="speaker-tag tag-keynote">Keynote</span>
       </div>
 
       <div class="speaker-card">
         <div class="speaker-photo">
-          <img src="images/speakers/speaker2.jpg" alt="Prof. YYY">
+          <img src="assets/speakers/speaker-2.jpg" alt="International Speaker">
+          <span class="badge international">International</span>
         </div>
-        <div class="speaker-name">Prof. YYY</div>
-        <div class="speaker-title">
-          School of Medicine<br>
-          University / Institution
+        <div class="speaker-info">
+          <h3 class="speaker-name">Maria Gonzalez, PhD</h3>
+          <p class="speaker-title">Senior Education Consultant</p>
+          <p class="speaker-affiliation">International Medical Council</p>
+          <p class="speaker-topic">
+            <i class="fa-solid fa-microphone-lines"></i>
+            Assessment Strategies Across Cultures
+          </p>
         </div>
-        <span class="speaker-tag tag-keynote">Keynote</span>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-photo">
+          <img src="assets/speakers/speaker-3.jpg" alt="International Speaker">
+          <span class="badge international">International</span>
+        </div>
+        <div class="speaker-info">
+          <h3 class="speaker-name">David Lee, MD, MPH</h3>
+          <p class="speaker-title">Director of Education</p>
+          <p class="speaker-affiliation">Asia-Pacific Medical Center</p>
+          <p class="speaker-topic">
+            <i class="fa-solid fa-microphone-lines"></i>
+            Programmatic Assessment in Residency Training
+          </p>
+        </div>
       </div>
 
     </div>
+  </section>
 
-    <!-- ===== Invited Speakers ===== -->
-    <h2 style="margin-top: 50px;">Invited Speakers</h2>
-
-    <div class="speakers-grid">
-
-      <div class="speaker-card">
-        <div class="speaker-photo">
-          <img src="images/speakers/speaker3.jpg" alt="Dr. AAA">
-        </div>
-        <div class="speaker-name">Dr. AAA</div>
-        <div class="speaker-title">
-          Attending Physician<br>
-          E-Da Hospital
-        </div>
-        <span class="speaker-tag tag-invited">Invited Speaker</span>
-      </div>
-
-      <div class="speaker-card">
-        <div class="speaker-photo">
-          <img src="images/speakers/speaker4.jpg" alt="Dr. BBB">
-        </div>
-        <div class="speaker-name">Dr. BBB</div>
-        <div class="speaker-title">
-          Associate Professor<br>
-          I-Shou University
-        </div>
-        <span class="speaker-tag tag-invited">Invited Speaker</span>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ===== Footer（共用） ===== -->
+  <!-- 共用 Footer -->
+  <!-- ================= FOOTER ================= -->
+  <!-- <footer>...</footer> -->
 <div id="site-footer"></div>
 <script src="js/include.js"></script>
-
-
+<script src="js/menu.js"></script>
 </body>
 </html>
-
-
-
-

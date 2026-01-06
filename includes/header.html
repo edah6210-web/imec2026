@@ -2,27 +2,38 @@
   <div class="header-inner container">
 
     <!-- Logo 區 -->
-   <div class="site-brand text-logo">
-  <div class="site-title">
-    <span class="title-main">全球視野、在地實踐:醫學教育與教育研究的趨勢</span>
-    <span class="title-sub">2026 義大醫療國際醫學教育研討會</span>
-  </div>
-</div>
+    <div class="site-brand text-logo">
+      <div class="site-title">
+        <span class="title-main">全球視野、在地實踐:醫學教育與教育研究的趨勢</span>
+        <span class="title-sub">2026 義大醫療國際醫學教育研討會</span>
+      </div>
+    </div>
+
     <!-- 漢堡 -->
-    <div class="menu-toggle">
+    <div class="menu-toggle"
+         aria-label="Open menu"
+         aria-expanded="false">
       <i class="fa-solid fa-bars"></i>
     </div>
 
     <!-- 導覽 -->
-    <nav class="main-nav">
+    <nav class="main-nav" aria-hidden="true">
+
+      <!-- 關閉按鈕（手機側滑選單用） -->
+      <button class="menu-close" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
       <ul>
-        <li><a href="index.html">首頁</a></li>
-        <li><a href="agenda.html">議程表</a></li>
-        <li><a href="registration.html">線上報名</a></li>
-        <li><a href="speakers.html">講師群</a></li>
+        <li><a href="index.html" class="is-active">首頁</a></li>
+        <li><a href="agenda.html" class="is-active">議程表</a></li>
+        <li><a href="registration.html" class="is-active">線上報名</a></li>
+        <li><a href="speakers.html" class="is-active">講師群</a></li>
       </ul>
     </nav>
 
   </div>
 </header>
 
+<!-- 手機選單背景遮罩 -->
+<div class="nav-backdrop"></div>
