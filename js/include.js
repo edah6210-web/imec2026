@@ -3,18 +3,26 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =============================
      Header / Footer include
   ============================== */
-  fetch("header.html")
-    .then(res => res.text())
+  fetch("/includes/header.html")
+    .then(res => {
+      if (!res.ok) throw new Error("Header include failed");
+      return res.text();
+    })
     .then(html => {
       document.getElementById("site-header").innerHTML = html;
-      initHeaderBehavior(); // ★ header 載入完成後才初始化
-    });
+      initHeaderBehavior(); // header 載入完成後才初始化
+    })
+    .catch(err => console.error(err));
 
-  fetch("footer.html")
-    .then(res => res.text())
+  fetch("/includes/footer.html")
+    .then(res => {
+      if (!res.ok) throw new Error("Footer include failed");
+      return res.text();
+    })
     .then(html => {
       document.getElementById("site-footer").innerHTML = html;
-    });
+    })
+    .catch(err => console.error(err));
 
   /* =============================
      Header 行為（唯一來源）
@@ -26,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!header || !menuToggle || !nav) return;
 
-    /* ===== 捲動玻璃效果（桌機＋手機共用） ===== */
+    /* ===== 捲動玻璃效果 ===== */
     const onScroll = () => {
       if (window.scrollY > 60) {
         header.classList.add("header-glass");
@@ -42,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ===== 手機版 Menu Toggle ===== */
     menuToggle.addEventListener("click", (e) => {
-      e.stopPropagation(); // 防止冒泡
+      e.stopPropagation();
       nav.classList.toggle("active");
     });
 
@@ -67,4 +75,5 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
 });
