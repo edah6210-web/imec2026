@@ -142,32 +142,75 @@ header {
   border-radius: 999px;
   font-weight: 600;
   font-size: 16px;
+  line-height: 1;
   text-decoration: none;
   border: none;
   cursor: pointer;
 
   transition:
-    background-color 0.25s ease,
+    background 0.25s ease,
     color 0.25s ease,
     transform 0.2s ease,
     box-shadow 0.2s ease;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
+/* Hover 微浮起 */
 .btn:hover {
   transform: translateY(-2px);
 }
 
-.btn-primary {
-  background: linear-gradient(135deg, #ffcc00, #ffd633);
-  color: #003366;
-  box-shadow: 0 8px 18px rgba(255, 204, 0, 0.35);
+/* Active 回饋 */
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
+/* =========================
+   Primary（主行動）
+   ========================= */
+.btn-primary {
+  background: linear-gradient(180deg, #ffdd55, #ffcc00);
+  color: #003366;
+
+  box-shadow:
+    inset 0 -10px 14px rgba(255, 204, 0, 0.35),
+    0 8px 18px rgba(255, 204, 0, 0.35);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(180deg, #ffe066, #ffd633);
+
+  box-shadow:
+    inset 0 -8px 12px rgba(255, 204, 0, 0.4),
+    0 12px 24px rgba(255, 204, 0, 0.45);
+}
+
+/* =========================
+   Secondary（次要行動）
+   ========================= */
 .btn-secondary {
   background: #ffffff;
   color: var(--green-main);
   border: 2px solid var(--green-main);
+
+  box-shadow:
+    inset 0 -8px 12px rgba(0, 0, 0, 0.05),
+    0 6px 14px rgba(0, 0, 0, 0.08);
 }
+
+.btn-secondary:hover {
+  background: var(--green-light);
+  color: #ffffff;
+
+  box-shadow:
+    inset 0 -6px 10px rgba(0, 0, 0, 0.08),
+    0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
 
 /* =====================================================
    HERO
@@ -187,6 +230,26 @@ header {
   border-radius: 20px;
   padding: 40px 45px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* =====================================================
+   HERO – Highlight Title
+===================================================== */
+
+.hero-highlight {
+  font-weight: 900;
+/* https://grabient.com/HQZgjArANGwGwE5oBZRxFeCAcNjO11RAQCZNSINgwAGMTWhAdk2ebkwlOU2QgRA?style=linearSwatches&angle=45 */
+
+background: linear-gradient(
+  45deg, #6d391e 0.000%, 
+  #6d391e 16.667%, 
+  #a34303 calc(16.667% + 1px), 
+  #a34303 33.333%, #d05300 calc(33.333% + 1px), 
+  #d05300 50.000%, #f06900 calc(50.000% + 1px), 
+  #f06900 66.667%, #ff8416 calc(66.667% + 1px), 
+  #ff8416 83.333%, #ffa43d calc(83.333% + 1px) 100.000%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* =====================================================
@@ -585,6 +648,97 @@ header {
     margin-top: 12px;
   }
 
-s
+.credit-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 0.95rem;
+}
+
+.credit-table th,
+.credit-table td {
+  border: 1px solid #ddd;
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.credit-table th {
+  background: #f5f7fa;
+  font-weight: 600;
+}
 
 }
+/* =====================================================
+   FOOTER – PURE GLASS (NO GRADIENT)
+===================================================== */
+.site-footer {
+  position: relative;
+  padding: 64px 20px 32px;
+  background: rgba(204, 244, 204, 0.75);
+  color: #1f3d33;
+}
+
+/* Footer 玻璃卡本體 */
+.site-footer .footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+
+  background: rgba(247, 248, 247, 0.75);
+  border-radius: 28px;
+  padding: 48px 44px;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* 標題 */
+.site-footer h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: 14px;
+}
+
+/* 主題強調 */
+.footer-theme span {
+  font-weight: 700;
+  color: var(--green-main);
+}
+
+/* 英文輔助文字 */
+.site-footer .en {
+  display: block;
+  font-size: 0.85rem;
+  color: #5c7f73;
+}
+
+/* 連結 */
+.site-footer a {
+  color: var(--green-dark);
+  text-decoration: underline;
+}
+
+/* Copyright */
+.footer-copy {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #5c7f73;
+}
+@media (max-width: 768px) {
+  .site-footer .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 36px 26px;
+    border-radius: 22px;
+  }
+}
+
