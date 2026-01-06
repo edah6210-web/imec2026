@@ -625,3 +625,16 @@ header .header-inner {
   }
 }
 
+/* =========================
+   Header 捲動後縮小（手機）
+========================= */
+@media (max-width: 768px) {
+  .header-glass {
+    padding: 8px 16px;
+  }
+
+  .header-transparent {
+    padding: 14px 16px;
+  }
+}
+
