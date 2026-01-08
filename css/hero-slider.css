@@ -1,0 +1,178 @@
+/* =====================================================
+   HERO SLIDER – SPEAKER VERSION
+   獨立檔案，僅負責首頁 Speaker 輪播
+===================================================== */
+
+
+/* =====================================================
+   SLIDER CONTAINER
+===================================================== */
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   SLIDES WRAPPER
+===================================================== */
+
+.hero-slider .slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* =====================================================
+   SINGLE SLIDE
+===================================================== */
+
+.hero-slider .slide {
+  position: absolute;
+  inset: 0;
+
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.hero-slider .slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+
+/* =====================================================
+   DARK OVERLAY (READABILITY)
+===================================================== */
+
+.hero-slider .slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.7)
+  );
+}
+
+
+/* =====================================================
+   TEXT OVERLAY
+===================================================== */
+
+.hero-slider .hero-overlay {
+  position: relative;
+  z-index: 2;
+
+  height: 100%;
+  max-width: 720px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding-bottom: 120px;
+  color: #ffffff;
+}
+
+.hero-slider .hero-overlay h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.hero-slider .hero-meta {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+
+/* =====================================================
+   ROLE BADGE
+===================================================== */
+
+.hero-slider .hero-badge {
+  display: inline-block;
+  align-self: flex-start;
+
+  margin-bottom: 16px;
+  padding: 6px 16px;
+
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hero-slider .hero-badge.keynote {
+  background: linear-gradient(135deg, #ffcc00, #ffd966);
+  color: #003366;
+}
+
+.hero-slider .hero-badge.international {
+  background: #2fa36b;
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   DOT NAVIGATION
+===================================================== */
+
+.hero-slider .slider-dots {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.hero-slider .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.hero-slider .dot.active {
+  background: #ffffff;
+}
+
+
+/* =====================================================
+   MOBILE ADJUSTMENTS
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .hero-slider {
+    height: 90vh;
+  }
+
+  .hero-slider .hero-overlay {
+    padding-bottom: 80px;
+  }
+
+  .hero-slider .hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .hero-slider .hero-meta {
+    font-size: 1rem;
+  }
+}

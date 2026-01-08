@@ -15,7 +15,7 @@
     crossorigin="anonymous"
   />
 
-  <!-- BeClass iframe RWD 微調（僅此頁使用） -->
+  <!-- Google Form iframe 微調（僅此頁使用） -->
   <style>
     .iframe-wrapper {
       margin-top: 40px;
@@ -23,21 +23,23 @@
 
     .iframe-container {
       width: 100%;
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       border-radius: 16px;
       overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     }
 
     .iframe-container iframe {
       width: 100%;
-      height: 1300px;
+      height: 1500px;
       border: none;
     }
 
     @media (max-width: 768px) {
       .iframe-container iframe {
-        height: 1600px;
+        height: 1800px;
       }
     }
 
@@ -100,105 +102,105 @@
   <div class="container">
     <div class="section-card">
 
+      <h1>線上報名</h1>
+      <p>請詳閱以下報名注意事項，並於下方完成線上報名。</p>
 
-    <h1>線上報名</h1>
-    <p>請詳閱以下報名注意事項，並於下方完成線上報名。</p>
+      <hr style="margin: 30px 0;" />
 
-    <hr style="margin: 30px 0;" />
+      <!-- ===== 報名注意事項 ===== -->
+      <div class="notice-box">
 
-    <!-- ===== 報名注意事項 ===== -->
-    <div class="notice-box">
+        <div class="notice-title">
+          <i class="fa-solid fa-circle-info"></i>
+          <h3>報名注意事項 Registration Information</h3>
+        </div>
 
-      <div class="notice-title">
-        <i class="fa-solid fa-circle-info"></i>
-        <h3>報名注意事項 Registration Information</h3>
+        <ul class="notice-list">
+
+          <li>
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>
+              <strong>會議日期：</strong>
+              2026年1月31日（六）09:00–15:20
+            </span>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-calendar"></i>
+            <span>
+              <strong>報名期限：</strong>
+              即日起至 <strong>2026 年 01 月 23 日(五) 中午12點</strong> 止，名額有限，額滿即提前截止。
+            </span>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>
+              <strong>現場參加（Onsite）：</strong><br />
+              義大癌治療醫院 六樓大講堂
+              <a href="https://maps.app.goo.gl/8goaZzmd13pcAub87"
+                 target="_blank"
+                 style="color: var(--green-dark); font-weight: 500;">
+                📍 點此開啟 Google 地圖
+              </a>
+            </span>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-video"></i>
+            <span>
+              <strong>線上視訊（Online）：</strong><br />
+              報名完成後，將於會議前兩天以 Email 寄送視訊連結。
+            </span>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-envelope-open-text"></i>
+            <span>
+              報名成功後，系統將自動寄送 <strong>報名確認信</strong> 至您填寫的電子郵件信箱。
+            </span>
+          </li>
+
+        </ul>
+
+        <div class="notice-highlight">
+          <i class="fa-solid fa-leaf"></i>
+          本研討會採 <strong>現場</strong> 與 <strong>線上視訊</strong> 兩種方式辦理，
+          請於報名表單中擇一參加。
+        </div>
+
       </div>
 
-      <ul class="notice-list">
-
-        <li>
-          <i class="fa-solid fa-calendar-days"></i>
-          <span>
-            <strong>會議日期：</strong>
-            2026年1月31日（六）09:00–15:20
-          </span>
-        </li>
-
-        <li>
-          <i class="fa-solid fa-calendar"></i>
-          <span>
-            <strong>報名期限：</strong>
-            即日起至 <strong>2026 年 01 月 23 日(五) 中午12點</strong> 止，名額有限，額滿即提前截止。
-          </span>
-        </li>
-
-        <li>
-          <i class="fa-solid fa-location-dot"></i>
-          <span>
-            <strong>現場參加（Onsite）：</strong><br />
-            義大癌治療醫院 六樓大講堂
-            <a href="https://maps.app.goo.gl/8goaZzmd13pcAub87"
-               target="_blank"
-               style="color: var(--green-dark); font-weight: 500;">
-              📍 點此開啟 Google 地圖
-            </a>
-          </span>
-        </li>
-
-        <li>
-          <i class="fa-solid fa-video"></i>
-          <span>
-            <strong>線上視訊（Online）：</strong><br />
-            報名完成後，將於會議前兩天以 Email 寄送視訊連結。
-          </span>
-        </li>
-
-        <li>
-          <i class="fa-solid fa-envelope-open-text"></i>
-          <span>
-            報名成功後，系統將自動寄送 <strong>報名確認信</strong> 至您填寫的電子郵件信箱。
-          </span>
-        </li>
-
-      </ul>
-
-      <div class="notice-highlight">
-        <i class="fa-solid fa-leaf"></i>
-        本研討會採 <strong>現場</strong> 與 <strong>線上視訊</strong> 兩種方式辦理，
-        請於報名表單中擇一參加。
+      <!-- ===== 手機填寫提醒 ===== -->
+      <div class="notice-highlight" style="margin-top: 30px;">
+        <i class="fa-solid fa-mobile-screen-button"></i>
+        若您在<strong>手機</strong>上填寫本頁嵌入式表單感到不便，
+        可點擊下方連結，於<strong>另開新視窗</strong>中完成報名：<br /><br />
+        <a href="https://forms.gle/k9suf1SiXtweywMT8"
+           target="_blank"
+           style="color: var(--green-dark); font-weight: bold;">
+          👉 開啟 Google 報名表（新視窗）
+        </a>
       </div>
 
-    </div>
-
-    <!-- ===== 手機填寫提醒 ===== -->
-    <div class="notice-highlight" style="margin-top: 30px;">
-      <i class="fa-solid fa-mobile-screen-button"></i>
-      若您在<strong>手機</strong>上填寫本頁嵌入式表單感到不便，
-      可點擊下方連結，於<strong>另開新視窗</strong>中完成報名：<br /><br />
-      <a href="https://www.beclass.com/rid=3050257694a0a431c9e5"
-         target="_blank"
-         style="color: var(--green-dark); font-weight: bold;">
-        👉 開啟報名表單（新視窗）
-      </a>
-    </div>
-
-    <!-- ===== BeClass 報名表 ===== -->
-    <div class="iframe-wrapper">
-      <div class="iframe-container">
-        <iframe
-          src="https://www.beclass.com/m/showregist.php?regist_id=MzA1MDI1NzY5NGEwYTQzMWM5ZTU6U2hvd0Zvcm0="
-          loading="lazy">
-        </iframe>
-      </div>
-    </div>
-
-    </div>
+      <!-- ===== Google 表單 ===== -->
+      <div class="iframe-wrapper">
+  <div class="iframe-container">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdBentWD3Azp8cbZLj8U81LAGQGYgLhtJyXZOCwjhU-Wt2qIA/viewform?embedded=true"
+      loading="lazy"
+      title="2026 國際醫學教育研討會 線上報名表">
+    </iframe>
   </div>
+</div>
+
 </section>
 
 <!-- ===== Footer（共用） ===== -->
 <div id="site-footer"></div>
+
 <script src="js/include.js"></script>
 <script src="js/menu.js"></script>
+
 </body>
 </html>

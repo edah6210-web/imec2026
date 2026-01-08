@@ -1,0 +1,143 @@
+/* =====================================================
+   SPEAKER.CSS
+   專責：Speakers / Keynote / Invited / Moderator
+   原則：
+   - 不影響全站
+   - 桌機先定義
+   - 手機 override 一律放最後
+===================================================== */
+/* =====================================================
+   SPEAKER.CSS  (FINAL / FROZEN)
+===================================================== */
+
+/* ===== GRID ===== */
+
+.speaker-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-bottom: 80px;
+  justify-items: center;
+}
+
+/* ===== CARD ===== */
+
+.speaker-card {
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Keynote card must not inherit invited width */
+.speaker-card.keynote-split {
+  max-width: none;     /* ⬅ 關鍵 */
+  width: 100%;
+}
+
+/* ===== PHOTO ===== */
+
+.speaker-photo {
+  background: #f4f6f5;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.speaker-photo img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.06),
+    0 10px 24px rgba(0,0,0,0.08),
+    0 24px 48px rgba(0,0,0,0.06);
+}
+
+/* ===== INFO ===== */
+
+.speaker-info {
+  padding: 20px 22px 26px;
+}
+
+.speaker-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.speaker-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1f6f4a;
+}
+
+.speaker-affiliation {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 6px 0 14px;
+}
+
+.speaker-topic {
+  font-size: 0.9rem;
+}
+
+/* ===== BADGES ===== */
+
+.badge {
+  margin-top: 10px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.badge.keynote {
+  background: linear-gradient(135deg,#ffcc00,#ffd966);
+  color:#003366;
+}
+
+.badge.invited {
+  background: linear-gradient(135deg,#2fa36b,#5bd89d);
+  color:#fff;
+}
+
+.badge.moderator {
+  background: linear-gradient(135deg,#4f7cff,#7aa7ff);
+  color:#fff;
+}
+
+/* ===== KEYNOTE SPLIT ===== */
+
+.keynote-split {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) 1fr;
+  align-items: center;
+}
+
+
+/* ===== TITLES ===== */
+
+.speaker-group-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  margin: 80px 0 32px;
+  padding-left: 16px;
+  border-left: 6px solid #2fa36b;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 768px) {
+
+  .speaker-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .keynote-split {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
