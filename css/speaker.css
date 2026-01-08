@@ -117,15 +117,104 @@
 }
 
 
-/* ===== TITLES ===== */
+/* =====================================================
+   SPEAKER GROUP TITLE – GLASS LAYER
+===================================================== */
 
 .speaker-group-title {
-  font-size: 1.9rem;
-  font-weight: 800;
+  display: inline-block;
+  padding: 12px 22px;
   margin: 80px 0 32px;
-  padding-left: 16px;
-  border-left: 6px solid #2fa36b;
+
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  color: #1f6f4a;
+
+  /* ⬇ 半透明非白色玻璃 */
+  background: rgba(46, 163, 107, 0.12);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border-radius: 14px;
+
+  /* 細邊界，增加層次 */
+  border: 1px solid rgba(46, 163, 107, 0.25);
+
+  /* 非卡片式陰影（很輕） */
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.08);
 }
+
+/* 極細漸層線（不是 border） */
+.speaker-group-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 4px;
+  height: 70%;
+
+  border-radius: 4px;
+
+  background: linear-gradient(
+    180deg,
+    #2fa36b,
+    #9be7c4
+  );
+}
+/* =====================================================
+   PAGE TITLE – CENTERED GLASS STYLE
+===================================================== */
+
+.page-title-section {
+  position: relative;
+}
+
+.page-title-wrap {
+  position: relative;
+  text-align: center;
+
+  padding: 48px 32px;
+  border-radius: 28px;
+
+  /* 半透明非白色玻璃背景 */
+  background: rgba(238, 247, 243, 0.721);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* 細邊界增加層次 */
+  border: 1px solid rgba(46, 163, 107, 0.22);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.page-title {
+  position: relative;
+  display: inline-block;
+
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+
+  padding-left: 18px; /* 給漸層線空間 */
+}
+
+
+
+.page-subtitle {
+  margin-top: 12px;
+  font-size: 1.05rem;
+  color: #2f3e34;
+  opacity: 0.85;
+}
+
 
 /* ===== MOBILE ===== */
 
@@ -139,5 +228,25 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .page-title-wrap {
+    padding: 36px 24px;
+  }
+
+  .page-title {
+    font-size: 2.2rem;
+    padding-left: 14px;
+  }
+
+  .page-title::before {
+    width: 3px;
+  }
+
+  .page-subtitle {
+    font-size: 0.95rem;
   }
 }
