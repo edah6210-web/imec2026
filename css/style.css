@@ -688,3 +688,92 @@ header {
     display: block;
   }
 }
+
+/* =========================
+   Language Switch - Pill Style
+========================= */
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+}
+
+/* 桌機位置 */
+@media (min-width: 992px) {
+  .lang-switch {
+    margin-left: 32px;
+  }
+}
+
+/* 手機：側滑選單底部 */
+@media (max-width: 991px) {
+  .lang-switch {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    justify-content: center;
+  }
+}
+
+/* Pill 按鈕本體 */
+.lang-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 14px;
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  color: var(--green-dark);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(47, 163, 107, 0.35);
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Hover（桌機） */
+@media (hover: hover) {
+  .lang-pill:hover {
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(47, 163, 107, 0.25);
+    transform: translateY(-1px);
+  }
+}
+
+/* Active / tap feedback（手機） */
+.lang-pill:active {
+  transform: scale(0.96);
+}
+/* =========================
+   Header Language Position Fix (Desktop)
+========================= */
+
+/* 讓導覽列變成水平排列 */
+@media (min-width: 992px) {
+  .main-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  /* 導覽選單在左 */
+  .main-nav .nav-links {
+    display: flex;
+    gap: 32px;
+  }
+
+  /* 語言切換推到最右 */
+  .main-nav .lang-switch {
+    margin-left: auto;
+  }
+}

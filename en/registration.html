@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registration｜2026 International Medical Education Conference</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 主樣式 -->
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- Font Awesome（全站共用） -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+  />
+
+  <!-- Google Form iframe 微調（僅此頁使用） -->
+  <style>
+    .iframe-wrapper {
+      margin-top: 40px;
+    }
+
+    .iframe-container {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .iframe-container iframe {
+      width: 100%;
+      height: 1500px;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .iframe-container iframe {
+        height: 1800px;
+      }
+    }
+
+    .notice-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green-dark);
+      margin-bottom: 20px;
+    }
+
+    .notice-title i {
+      color: var(--green-main);
+      font-size: 1.4rem;
+    }
+
+    .notice-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 10px;
+    }
+
+    .notice-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+      color: #2f3e34;
+    }
+
+    .notice-list i {
+      color: var(--green-main);
+      font-size: 1.1rem;
+      margin-top: 3px;
+    }
+
+    .notice-highlight {
+      background: var(--green-light);
+      border-left: 5px solid var(--green-main);
+      padding: 14px 16px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 0.95rem;
+    }
+
+    .notice-highlight i {
+      margin-right: 6px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="site-header"></div>
+
+
+<!-- ================= Registration ================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-card">
+
+      <h1>Registration</h1>
+      <p>Please read the following information carefully and complete the online registration form below.</p>
+
+      <hr style="margin: 30px 0;" />
+
+      <!-- ===== Registration Information ===== -->
+      <div class="notice-box">
+
+        <div class="notice-title">
+          <i class="fa-solid fa-circle-info"></i>
+          <h3>Registration Information</h3>
+        </div>
+
+        <ul class="notice-list">
+
+          <li>
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>
+              <strong>Date:</strong>
+              January 31, 2026 (Saturday), 09:00–15:20
+            </span>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-calendar"></i>
+            <span>
+              <strong>Registration Deadline:</strong>
+              From now until <strong>12:00 PM (noon), January 23, 2026 (Friday)</strong>.
+              Seats are limited and registration will close once capacity is reached.
+            </span>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>
+              <strong>Onsite Attendance:</strong><br />
+              6F Auditorium, E-Da Cancer Hospital
+              <a href="https://maps.app.goo.gl/8goaZzmd13pcAub87"
+                 target="_blank"
+                 style="color: var(--green-dark); font-weight: 500;">
+                📍 View on Google Maps
+              </a>
+            </span>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-video"></i>
+            <span>
+              <strong>Online Attendance:</strong><br />
+              The online meeting link will be sent by email two days prior to the conference.
+            </span>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-envelope-open-text"></i>
+            <span>
+              A <strong>registration confirmation email</strong> will be automatically sent to the email address you provide after successful registration.
+            </span>
+          </li>
+
+        </ul>
+
+        <div class="notice-highlight">
+          <i class="fa-solid fa-leaf"></i>
+          This conference will be held in <strong>onsite</strong> and <strong>online</strong> formats.
+          Please select your preferred attendance mode in the registration form.
+        </div>
+
+      </div>
+
+      <!-- ===== Mobile Notice ===== -->
+      <div class="notice-highlight" style="margin-top: 30px;">
+        <i class="fa-solid fa-mobile-screen-button"></i>
+        If you find it inconvenient to complete the embedded form on a <strong>mobile device</strong>,
+        please click the link below to open the form in a <strong>new window</strong>:<br /><br />
+        <a href="https://forms.gle/k9suf1SiXtweywMT8"
+           target="_blank"
+           style="color: var(--green-dark); font-weight: bold;">
+          👉 Open Google Registration Form (New Window)
+        </a>
+      </div>
+
+      <!-- ===== Google Form ===== -->
+      <div class="iframe-wrapper">
+        <div class="iframe-container">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdBentWD3Azp8cbZLj8U81LAGQGYgLhtJyXZOCwjhU-Wt2qIA/viewform?embedded=true"
+            loading="lazy"
+            title="2026 International Medical Education Conference Registration Form">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer (include) ===== -->
+<div id="site-footer"></div>
+
+<script src="../js/include.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/hero-slider.js"></script>
+
+<script>
+  loadHTML("#site-header", "../includes/header-en.html");
+  loadHTML("#site-footer", "../includes/footer-en.html");
+</script>
+
+</body>
+</html>

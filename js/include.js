@@ -1,31 +1,58 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =============================
-     Header / Footer include
+     Language detection
   ============================== */
-  fetch("/includes/header.html")
+  const isEN = location.pathname.startsWith("/en/");
+  const currentPath = window.location.pathname;
+  const fileName = currentPath.split("/").pop() || "index.html";
+
+  const headerPath = isEN
+    ? "/includes/header-en.html"
+    : "/includes/header.html";
+
+  const footerPath = isEN
+    ? "/includes/footer-en.html"
+    : "/includes/footer.html";
+
+  /* =============================
+     Load Header
+  ============================== */
+  fetch(headerPath)
     .then(res => {
       if (!res.ok) throw new Error("Header include failed");
       return res.text();
     })
     .then(html => {
-      document.getElementById("site-header").innerHTML = html;
-      initHeaderBehavior(); // header 載入完成後才初始化
+      const headerContainer = document.getElementById("site-header");
+      if (!headerContainer) return;
+
+      headerContainer.innerHTML = html;
+
+      initHeaderBehavior();
+      initLanguageSwitch();
+      setActiveMenu();
     })
     .catch(err => console.error(err));
 
-  fetch("/includes/footer.html")
+  /* =============================
+     Load Footer
+  ============================== */
+  fetch(footerPath)
     .then(res => {
       if (!res.ok) throw new Error("Footer include failed");
       return res.text();
     })
     .then(html => {
-      document.getElementById("site-footer").innerHTML = html;
+      const footerContainer = document.getElementById("site-footer");
+      if (!footerContainer) return;
+
+      footerContainer.innerHTML = html;
     })
     .catch(err => console.error(err));
 
   /* =============================
-     Header 行為（唯一來源）
+     Header behavior (single source)
   ============================== */
   function initHeaderBehavior() {
     const header = document.querySelector("#site-header header");
@@ -34,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!header || !menuToggle || !nav) return;
 
-    /* ===== 捲動玻璃效果 ===== */
+    /* ===== Scroll glass effect ===== */
     const onScroll = () => {
       if (window.scrollY > 60) {
         header.classList.add("header-glass");
@@ -43,35 +70,84 @@ document.addEventListener("DOMContentLoaded", () => {
         header.classList.add("header-transparent");
         header.classList.remove("header-glass");
       }
+
+      const menuClose = header.querySelector(".menu-close");
+
+/* ===== 手機版 Menu Close (X) ===== */
+menuClose?.addEventListener("click", (e) => {
+  e.stopPropagation();
+  nav.classList.remove("active");
+});
+
     };
 
     onScroll();
     window.addEventListener("scroll", onScroll);
 
-    /* ===== 手機版 Menu Toggle ===== */
+    /* ===== Mobile menu toggle ===== */
     menuToggle.addEventListener("click", (e) => {
       e.stopPropagation();
       nav.classList.toggle("active");
     });
 
-    /* 點選選單後自動收合（手機） */
+    /* Close menu after clicking link (mobile) */
     nav.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         nav.classList.remove("active");
       });
     });
 
-    /* 點空白處自動關閉 menu（手機） */
+    /* Click outside to close menu (mobile) */
     document.addEventListener("click", (e) => {
       if (!header.contains(e.target)) {
         nav.classList.remove("active");
       }
     });
 
-    /* ===== 桌機版確保永遠顯示 ===== */
+    /* Ensure desktop menu always visible */
     window.addEventListener("resize", () => {
       if (window.innerWidth > 991) {
         nav.classList.remove("active");
+      }
+    });
+  }
+
+  /* =============================
+     Language switch (ZH / EN)
+  ============================== */
+  function initLanguageSwitch() {
+    const langEN = document.getElementById("lang-en");
+    const langZH = document.getElementById("lang-zh");
+
+    if (langEN) {
+      langEN.href = "/en/" + fileName;
+    }
+
+    if (langZH) {
+      langZH.href = "/" + fileName;
+    }
+  }
+
+  /* =============================
+     Active menu highlight
+  ============================== */
+  function setActiveMenu() {
+    const navLinks = document.querySelectorAll("#site-header nav a");
+
+    navLinks.forEach(link => {
+      const linkPath = link.getAttribute("href");
+
+      if (!linkPath) return;
+
+      if (
+        linkPath.endsWith("/" + fileName) ||
+        linkPath === fileName ||
+        linkPath === "/" + fileName ||
+        linkPath === "/en/" + fileName
+      ) {
+        link.classList.add("is-active");
+      } else {
+        link.classList.remove("is-active");
       }
     });
   }

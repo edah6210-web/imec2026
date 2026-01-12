@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agenda｜2026 International Medical Education Conference</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 主樣式 -->
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- Font Awesome（全站共用） -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+  />
+
+  <!-- 議程頁專用樣式（可之後移到 style.css） -->
+  <style>
+    /* ===== 議程卡片 ===== */
+    .agenda-day {
+      margin-bottom: 40px;
+    }
+
+    .agenda-day h2 {
+      margin-bottom: 20px;
+      color: var(--green-dark);
+    }
+
+    .agenda-card {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 20px;
+      padding: 20px 24px;
+      margin-bottom: 18px;
+
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .agenda-time {
+      font-weight: bold;
+      color: var(--green-main);
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .agenda-content h3 {
+      margin-bottom: 6px;
+      font-size: 1.05rem;
+      color: #1f3d36;
+    }
+
+    .agenda-content p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #355f55;
+    }
+
+    .agenda-meta {
+      margin-top: 6px;
+      font-size: 0.85rem;
+      color: #6b7f77;
+    }
+
+    .agenda-card {
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+    }
+
+    @media (hover: hover) {
+      .agenda-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+      }
+    }
+
+    .agenda-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 6px;
+    }
+
+    .tag-keynote {
+      background: #eef5ff;
+      color: #2a5db0;
+    }
+
+    .tag-session {
+      background: #e6f7f3;
+      color: #0f5c4c;
+    }
+
+    .tag-break {
+      background: #f3f4f6;
+      color: #555;
+    }
+
+    .tag-qa {
+      background: #f3f4f6;
+      color: #8c81bce2;
+    }
+
+    @media (max-width: 768px) {
+      .agenda-card {
+        grid-template-columns: 1fr;
+      }
+
+      .agenda-time {
+        margin-bottom: 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="site-header"></div>
+
+<!-- ================= Agenda ================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-card">
+      <h1>Agenda</h1>
+      <p>The following agenda is tentative and subject to change based on official announcements.</p><br><br>
+
+      <a href="https://drive.google.com/file/d/1ew0RUiw0yAc2TuA9mY1cw_mqW2kThtdf/view?usp=sharing" class="btn btn-secondary">
+        <i class="fa-solid fa-pen-to-square"></i> Download Agenda (Chinese)
+      </a>
+      <a href="https://drive.google.com/file/d/1aOFSqsJPPvK6bjIyjqSGZcJeoP_g4IS2/view?usp=sharing" class="btn btn-secondary">
+        <i class="fa-solid fa-pen-to-square"></i> Download Agenda (English)
+      </a><br><br>
+
+      <h4>Theme / Global Vision, Local Practice: Trends in Medical Education and Educational Research</h4>
+      <h4>
+        Topic / From globalization to glocalization: current trends in medical education and educational research for adapting international standards to local needs
+      </h4>
+
+      ※ This workshop is accredited with 5 faculty development hours by E-Da Hospital and continuing education credits for various professions (subject to final approval by respective associations).
+
+      <hr style="margin: 30px 0;" />
+
+      <!-- ===== Day 1 ===== -->
+      <div class="agenda-day">
+        <h2>
+          <i class="fa-solid fa-calendar-days icon-green"></i>
+          January 31, 2026 (Saturday)
+        </h2>
+
+        <div class="agenda-card">
+          <div class="agenda-time">08:30 – 09:00</div>
+          <div class="agenda-content">
+            <h3>Registration</h3>
+          </div>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-time">09:00 – 09:10</div>
+          <div class="agenda-content">
+            <h3>Opening Remarks</h3>
+            <div class="agenda-meta">
+              Yuan-Kun Tu, Professor / Superintendent, E-Da Hospital
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-time">09:10 – 09:50</div>
+          <div class="agenda-content">
+            <span class="agenda-tag tag-keynote">Keynote Speech</span>
+            <h3>
+              Focusing on Implementing the Clinician Educator Milestones Across Different Contexts and Their Role in Faculty Growth
+            </h3>
+            <div class="agenda-meta">
+              Speaker: Laura Edgar, EdD / Senior Vice President, ACGME (USA)<br>
+              Moderator: Chih-Wei Yang, Professor / Secretary General, Taiwan Association for Medical Education
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-time">09:50 – 10:00</div>
+          <div class="agenda-content">
+            <span class="agenda-tag tag-qa">Q&amp;A</span>
+            <h3>Keynote Q&amp;A</h3>
+            <div class="agenda-meta">
+              Speaker: Laura Edgar, EdD / Senior Vice President, ACGME (USA)<br>
+              Moderator: Chih-Wei Yang, Professor / Secretary General, Taiwan Association for Medical Education
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-time">10:00 – 10:40</div>
+          <div class="agenda-content">
+            <span class="agenda-tag tag-session">Invited Speech</span>
+            <h3>
+              Addressing Clinical Uncertainty: A Glocalized Study on Physician Readiness for Practice Through Tolerance and Management Strategies
+            </h3>
+            <div class="agenda-meta">
+              Speaker: Yu-Che Chang, Professor / Associate Director, Center for Medical Education Research, Chang Gung Memorial Hospital<br>
+              Moderator: Chun-Nung Lin, Professor / Dean, College of Medicine, I-Shou University; Executive Vice Superintendent, E-Da Hospital
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-time">10:40 – 10:45</div>
+          <div class="agenda-content">
+            <span class="agenda-tag tag-qa">Q&amp;A</span>
+            <h3>Session 2 Q&amp;A</h3>
+            <div class="agenda-meta">
+              Speaker: Yu-Che Chang, Professor / Associate Director, Center for Medical Education Research, Chang Gung Memorial Hospital<br>
+              Moderator: Chun-Nung Lin, Professor / Dean, College of Medicine, I-Shou University; Executive Vice Superintendent, E-Da Hospital
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-time">10:45 – 11:05</div>
+          <div class="agenda-content">
+            <span class="agenda-tag tag-break">Break</span>
+            <h3>Coffee Break</h3>
+          </div>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-time">11:05 – 11:45</div>
+          <div class="agenda-content">
+            <span class="agenda-tag tag-session">Invited Speech</span>
+            <h3>Global Vision, Local Practice: Trends in Medical Education and Educational Research</h3>
+            <div class="agenda-meta">
+              Speaker: Cheng-Ting Hsiao, Professor / Vice Superintendent, Chiayi Chang Gung Memorial Hospital<br>
+              Moderator: Wang-Hui Sheng, Professor / Chair, School of Medicine, NTU; Vice Superintendent, NTU Hospital Hsinchu Branch
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-time">11:45 – 11:50</div>
+          <div class="agenda-content">
+            <span class="agenda-tag tag-qa">Q&amp;A</span>
+            <h3>Session 3 Q&amp;A</h3>
+            <div class="agenda-meta">
+              Speaker: Cheng-Ting Hsiao, Professor / Vice Superintendent, Chiayi Chang Gung Memorial Hospital<br>
+              Moderator: Wang-Hui Sheng, Professor / Chair, School of Medicine, NTU; Vice Superintendent, NTU Hospital Hsinchu Branch
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-time">11:50 – 12:10</div>
+          <div class="agenda-content">
+            <span class="agenda-tag tag-qa">Panel Discussion</span>
+            <h3>Panel Discussion</h3><br>
+            Moderator: Cheng-Lung Liang, Professor / Vice Dean, College of Medicine, I-Shou University; Vice Superintendent, E-Da Hospital
+          </div>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-time">12:10 – 13:30</div>
+          <div class="agenda-content">
+            <span class="agenda-tag tag-break">Break</span>
+            <h3>Lunch Break</h3>
+          </div>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-time">13:30 – 14:10</div>
+          <div class="agenda-content">
+            <span class="agenda-tag tag-session">Invited Speech</span>
+            <h3>
+              From Change Management and Implementation Science to Learning Analytics:
+              The CBME Journey of the Taiwan Society of Otolaryngology–Head and Neck Surgery
+            </h3>
+            <div class="agenda-meta">
+              Speaker: Cheng-Wen Chen, Professor / Vice Superintendent for Administration, Cardinal Tien Hospital<br>
+              Moderator: Yi-Che Wu, Professor / Dean, College of Medicine, Mackay Medical University
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-time">14:10 – 14:15</div>
+          <div class="agenda-content">
+            <span class="agenda-tag tag-qa">Q&amp;A</span>
+            <h3>Session 4 Q&amp;A</h3>
+            <div class="agenda-meta">
+              Speaker: Cheng-Wen Chen, Professor / Vice Superintendent for Administration, Cardinal Tien Hospital<br>
+              Moderator: Yi-Che Wu, Professor / Dean, College of Medicine, Mackay Medical University
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-time">14:15 – 14:55</div>
+          <div class="agenda-content">
+            <span class="agenda-tag tag-session">Invited Speech</span>
+            <h3>
+              ACGME, AACOM, and AAMC Core Competency Frameworks:
+              Validation and Application Experience at KMU College of Medicine
+            </h3>
+            <div class="agenda-meta">
+              Speaker: Yu-Chih Lin, Professor / Associate Director, Department of Clinical Education and Training, KMU Chung-Ho Memorial Hospital<br>
+              Moderator: Wei-Hung Lin, Professor / Chief Executive Officer, National Cheng Kung University Hospital
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-time">14:55 – 15:00</div>
+          <div class="agenda-content">
+            <span class="agenda-tag tag-qa">Q&amp;A</span>
+            <h3>Session 5 Q&amp;A</h3>
+            <div class="agenda-meta">
+              Speaker: Yu-Chih Lin, Professor / Associate Director, Department of Clinical Education and Training, KMU Chung-Ho Memorial Hospital<br>
+              Moderator: Wei-Hung Lin, Professor / Chief Executive Officer, National Cheng Kung University Hospital
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-time">15:00 – 15:20</div>
+          <div class="agenda-content">
+            <span class="agenda-tag tag-qa">Panel Discussion</span>
+            <h3>Panel Discussion</h3>
+            <div class="agenda-meta">
+              Chun-Nung Lin, Professor / Dean, College of Medicine, I-Shou University; Executive Vice Superintendent, E-Da Hospital
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-time">15:20 – 15:30</div>
+          <div class="agenda-content">
+            <h3>Closing Remarks</h3>
+            <div class="agenda-meta">
+              Chun-Nung Lin, Professor / Dean, College of Medicine, I-Shou University; Executive Vice Superintendent, E-Da Hospital
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-time">15:30 ~</div>
+          <div class="agenda-content">
+            <h3>Adjourn</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer (include) ===== -->
+<div id="site-footer"></div>
+
+<script src="../js/include.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/hero-slider.js"></script>
+
+<script>
+  loadHTML("#site-header", "../includes/header-en.html");
+  loadHTML("#site-footer", "../includes/footer-en.html");
+</script>
+</body>
+</html>
