@@ -8,7 +8,7 @@ async function loadNews(langType) {
   if (!container) return;
 
   // 1. 設定對應的 JSON 路徑
-  const jsonFile = langType === 'en' ? "data/news_en.json" : "data/news_zh.json";
+const jsonFile = langType === 'en' ? "/data/news_en.json" : "/data/news_zh.json";
 
   try {
     // 2. 獲取資料
