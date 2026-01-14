@@ -1,7 +1,7 @@
 [
   {
     "date": "2026.01.05",
-    "tag": "",
+    "tag":"" ,
     "title": "本研討會即日起開放報名，至2025年10月27日截止（或額滿為止）",
     "summary": "研討會將採實體與線上視訊同步進行，歡迎醫學教育相關領域人員踴躍參加。",
     "content": "<h4>研討會辦理方式</h4>\n<p>本研討會將採「實體」及「線上視訊」同步進行，請於報名時擇一方式參加。</p>\n\n<h4>會議時間</h4>\n<p>2025年11月03日（星期一）09:00–15:00</p>\n\n<h4>會議地點</h4>\n<p>義大癌治療醫院 六樓大講堂</p>\n\n<h4>報名資訊</h4>\n<ul>\n  <li>報名期限：即日起至 2025年10月27日止（額滿即提前截止）</li>\n  <li>現場參加（Onsite）：義大癌治療醫院 六樓大講堂</li>\n  <li>線上視訊（Online）：會前兩天以電子郵件寄送視訊連結</li>\n</ul>\n\n<h4>注意事項</h4>\n<p>本研討會全程免費，現場參加者恕不提供免費停車，午餐請自理。</p>\n\n<h4>聯絡窗口</h4>\n<p>醫學教育部 郭珮君 小姐<br>電話：07-6150011 分機 1618<br>Email：ed103513@edah.org.tw</p>\n\n<h4>資料下載</h4>\n<p>相關檔案將於官網另行公告。</p>"
@@ -14,12 +14,11 @@
     "content": "<h4>一、積分認列注意事項</h4>\n\n<p>1. 配合各學會學分採計之規定，請務必於指定時段內完成簽到與簽退，逾時將無法認列繼續教育積分（即使簽到退表單尚未關閉亦同）。<br>簽到退表單網址將於研討會當日公告於 Webex 聊天室中。</p>\n\n<table class=\"credit-table\">\n  <thead>\n    <tr>\n      <th>場次</th>\n      <th>可簽到時間</th>\n      <th>可簽退時間</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>上午場</td>\n      <td>08:50–09:10</td>\n      <td>11:50–12:10</td>\n    </tr>\n    <tr>\n      <td>下午場</td>\n      <td>13:20–13:40</td>\n      <td>15:20–15:40</td>\n    </tr>\n  </tbody>\n</table>\n\n<p>2. 已報名之參加者須全程參與研討會，並確實完成<strong>簽到、簽退、滿意度問卷及前後測</strong>，未完整完成者，恕無法認列繼續教育積分。</p>\n\n<p>3. 為利身分辨識，請將 Webex 顯示名稱設定為「<strong>服務機構＋姓名全名</strong>」。若名稱不符規定，工作人員將無法辨識身分，並可能請您重新登入；未依規定更正者，亦無法認列繼續教育積分。</p>\n\n<h4>二、繼續教育積分認列時數</h4>\n<p>以下僅列出適用之學分，其餘職類學分仍在申請中，將於核定後另行公告。</p>\n\n<h4>三、義大醫療體系同仁適用說明</h4>\n<p>義大醫療體系同仁可認列本體系醫院內<strong>一般師資培育時數 4 小時</strong>。</p>"
   },
   {
-  "date": "2026.01.14",
-  "tag": "IMPORTANT",
+  "date": "2026.01.06",
+  "tag": "important",
   "title": "視訊報名名額已滿，歡迎報名實體參加",
-  "summary": "線上視訊報名已額滿，現場實體參加仍開放，並提供精緻餐點。",
-  "content": "<h4>【中文公告】</h4>\n<p>感謝各界先進對本研討會的熱烈支持與踴躍報名。<br>由於<strong>線上視訊參加名額已額滿</strong>，目前已暫時關閉視訊報名選項。</p>\n\n<p>誠摯邀請尚未報名的與會者，<strong>改以實體方式蒞臨會場參加</strong>。<br>現場除可即時參與研討與交流外，亦<strong>備有精緻餐點供與會者享用</strong>，歡迎把握機會報名。</p>\n\n<h4>【English Announcement】</h4>\n<p>Thank you for your enthusiastic support and registration for this conference.<br>Please be informed that <strong>the quota for online (virtual) participation has been fully booked</strong>, and online registration is therefore temporarily closed.</p>\n\n<p>We warmly invite interested participants to <strong>register for onsite attendance</strong>.<br>In addition to in-person academic exchange, <strong>complimentary meals will be provided</strong> for onsite participants.</p>"
+  "summary": "線上視訊參加名額已額滿，現場報名仍開放，並備有精美餐點。",
+  "content": "<p>感謝各界先進對本研討會的熱烈支持與踴躍報名。</p>\n\n<p>由於<strong>線上視訊參加名額已額滿</strong>，目前已暫時關閉視訊報名選項。</p>\n\n<p>誠摯邀請尚未報名的與會者，<strong>改以實體方式蒞臨會場參加</strong>。現場除可即時參與研討與交流外，亦<strong>備有精美餐點供與會者享用</strong>，歡迎把握機會報名。</p>\n\n<p>如有相關疑問，歡迎隨時與主辦單位聯繫，謝謝您的支持與配合。</p>"
 }
 
 ]
-
