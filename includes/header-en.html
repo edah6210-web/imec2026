@@ -21,21 +21,23 @@
     <!-- ===== Navigation ===== -->
     <nav class="main-nav">
 
-      <!-- 關閉按鈕（僅手機） -->
+      <!-- Close Button (Mobile Only) -->
       <button class="menu-close" aria-label="Close menu">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
       <ul class="nav-links">
-        <li><a href="/en/index.html">Home</a></li>
-        <li><a href="/en/agenda.html">Agenda</a></li>
-        <li><a href="/en/speakers.html">Speakers</a></li>
-        <li><a href="/en/registration.html">Registration</a></li>
+        <!-- Use relative paths (./) for files in the same directory (en folder) -->
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./agenda.html">Agenda</a></li>
+        <li><a href="./speakers.html">Speakers</a></li>
+        <li><a href="./registration.html">Registration</a></li>
       </ul>
 
-      <!-- ===== Language Switch（單一 中文） ===== -->
+      <!-- ===== Language Switch (To Chinese Root) ===== -->
       <div class="lang-switch">
-        <a href="/index.html" class="lang-pill">中文</a>
+        <!-- Use relative path (../) to go up one level to the root index.html -->
+        <a href="../index.html" class="lang-pill">中文</a>
       </div>
 
     </nav>
@@ -43,4 +45,5 @@
   </div>
 </header>
 
+<!-- Mobile Menu Backdrop -->
 <div class="nav-backdrop"></div>
