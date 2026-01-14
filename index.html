@@ -7,12 +7,12 @@
 
   <!-- 主樣式 -->
   <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/hero-slider.css" />
+  <link rel="stylesheet" href="css/hero-slider.css" />
 
   <!-- Font Awesome -->
   <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    href="cdnjs.cloudflare.com"
     crossorigin="anonymous"
   />
 </head>
@@ -42,7 +42,7 @@
         and educational research for adapting international standards to local needs
       </h3>
 <br>
-            <p class="event-info">
+      <p class="event-info">
         <i class="fa-regular fa-calendar"></i> 2026/01/31 (SAT)<br />
         <i class="fa-solid fa-location-dot"></i> 義大癌治療醫院 六樓大講堂
       </p>
@@ -95,7 +95,7 @@
 
     <!-- Keynote -->
     <a href="speakers.html" class="slide active"
-       style="background-image:url('../assets/speakers/laura-edgar.png')">
+       style="background-image:url('assets/speakers/laura-edgar.png')">
       <div class="hero-overlay container">
         <span class="hero-badge keynote">Keynote Speaker</span>
         <h1>Laura Edgar, PhD.</h1>
@@ -108,7 +108,7 @@
 
     <!-- Invited Speakers 1 -->
     <a href="speakers.html" class="slide"
-       style="background-image:url('../assets/speakers/yu-che-chang.png')">
+       style="background-image:url('assets/speakers/yu-che-chang.png')">
       <div class="hero-overlay container">
         <span class="hero-badge international">Invited Speakers</span>
         <h1>張玉喆 教授</h1>
@@ -121,7 +121,7 @@
 
     <!-- Invited Speakers 2 -->
     <a href="speakers.html" class="slide"
-       style="background-image:url('../assets/speakers/cheng-ting-hsiao.png')">
+       style="background-image:url('assets/speakers/cheng-ting-hsiao.png')">
       <div class="hero-overlay container">
         <span class="hero-badge international">Invited Speakers</span>
         <h1>蕭政廷 教授</h1>
@@ -133,7 +133,7 @@
 
     <!-- Invited Speakers 3 -->
     <a href="speakers.html" class="slide"
-       style="background-image:url('../assets/speakers/cheng-wen-chen.png')">
+       style="background-image:url('assets/speakers/cheng-wen-chen.png')">
       <div class="hero-overlay container">
         <span class="hero-badge international">Invited Speakers</span>
         <h1>陳正文 教授</h1>
@@ -145,7 +145,7 @@
 
      <!-- Invited Speakers 4 -->
     <a href="speakers.html" class="slide"
-       style="background-image:url('../assets/speakers/yu-chih-lin.png')">
+       style="background-image:url('assets/speakers/yu-chih-lin.png')">
       <div class="hero-overlay container">
         <span class="hero-badge international">Invited Speakers</span>
         <h1>林育志 教授</h1>
@@ -158,9 +158,10 @@
 
   </div>
 
-  <!-- dots -->
+  <!-- dots - 修正為 5 個點以對應 5 張投影片 -->
   <div class="slider-dots">
     <span class="dot active"></span>
+    <span class="dot"></span>
     <span class="dot"></span>
     <span class="dot"></span>
     <span class="dot"></span>
@@ -224,8 +225,6 @@
   updateCountdown();
 </script>
 
-
-<!-- ================= 最新消息 JSON / Accordion ================= -->
 <script src="js/news.js"></script>
 
 <!-- ================= Header 行為控制 ================= -->
@@ -243,20 +242,9 @@
       header.classList.remove("header-glass");
     }
   });
-
-  /* 手機版 Menu Toggle */
-  document.addEventListener("click", (e) => {
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector("nav.main-nav");
-
-    if (!toggle || !nav) return;
-    if (toggle.contains(e.target)) {
-      nav.classList.toggle("active");
-    }
-  });
 </script>
 
-<!-- ===== Footer (include) ===== -->
+<!-- ===== Footer & Scripts ===== -->
 <div id="site-footer"></div>
 <script src="js/include.js"></script>
 <script src="js/menu.js"></script>
@@ -265,7 +253,3 @@
 
 </body>
 </html>
-
-
-
-

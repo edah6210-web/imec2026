@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Medical Education Conference 2026</title>
 
-  <!-- 主樣式 -->
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/hero-slider.css" />
 
@@ -22,14 +22,14 @@
 <!-- ===== Header (include) ===== -->
 <div id="site-header"></div>
 <div class="lang-switch">
-  <a href="#" id="lang-zh">中文</a>s
+  <a href="../index.html" id="lang-zh">中文</a>
 </div>
 
 <!-- ================= Hero ================= -->
 <section class="hero hero-split hero-light">
   <div class="hero-inner">
 
-    <!-- 左側：白卡文字 -->
+    <!-- Left: Content Card -->
     <div class="hero-card">
       <h1>
         <span class="hero-highlight">Global Vision, Local Practice</span>
@@ -46,7 +46,7 @@
         <i class="fa-solid fa-location-dot"></i> 6F Auditorium, E-Da Cancer Hospital
       </p>
 <br>
-      <!-- 倒數計時 -->
+      <!-- Countdown -->
       <div class="countdown">
         <div class="time-box">
           <span id="days">00</span>
@@ -73,7 +73,7 @@
       </a>
     </div>
 
-    <!-- 右側：插圖 -->
+    <!-- Right: Illustration -->
     <div class="hero-image">
       <img
         src="../assets/images/hero-medical-illustration.jpg"
@@ -105,7 +105,7 @@
       </div>
     </a>
 
-    <!-- Invited Speakers 1 -->
+    <!-- Invited Speaker 1 -->
     <a href="speakers.html" class="slide"
        style="background-image:url('../assets/speakers/yu-che-chang.png')">
       <div class="hero-overlay container">
@@ -118,7 +118,7 @@
       </div>
     </a>
 
-    <!-- Invited Speakers 2 -->
+    <!-- Invited Speaker 2 -->
     <a href="speakers.html" class="slide"
        style="background-image:url('../assets/speakers/cheng-ting-hsiao.png')">
       <div class="hero-overlay container">
@@ -130,7 +130,7 @@
       </div>
     </a>
 
-    <!-- Invited Speakers 3 -->
+    <!-- Invited Speaker 3 -->
     <a href="speakers.html" class="slide"
        style="background-image:url('../assets/speakers/cheng-wen-chen.png')">
       <div class="hero-overlay container">
@@ -142,7 +142,7 @@
       </div>
     </a>
 
-    <!-- Invited Speakers 4 -->
+    <!-- Invited Speaker 4 -->
     <a href="speakers.html" class="slide"
        style="background-image:url('../assets/speakers/yu-chih-lin.png')">
       <div class="hero-overlay container">
@@ -157,9 +157,10 @@
 
   </div>
 
-  <!-- dots -->
+  <!-- dots - Updated to 5 dots to match the slides -->
   <div class="slider-dots">
     <span class="dot active"></span>
+    <span class="dot"></span>
     <span class="dot"></span>
     <span class="dot"></span>
     <span class="dot"></span>
@@ -195,7 +196,7 @@
   </div>
 </section>
 
-<!-- ================= 倒數計時 ================= -->
+<!-- ================= Countdown Script ================= -->
 <script>
   const targetDate = new Date("2026-01-31T09:00:00").getTime();
   const timer = setInterval(updateCountdown, 1000);
@@ -209,28 +210,22 @@
       return;
     }
 
-    document.getElementById("days").innerText =
-      Math.floor(distance / (1000 * 60 * 60 * 24));
-    document.getElementById("hours").innerText =
-      Math.floor((distance / (1000 * 60 * 60)) % 24);
-    document.getElementById("minutes").innerText =
-      Math.floor((distance / (1000 * 60)) % 60);
-    document.getElementById("seconds").innerText =
-      Math.floor((distance / 1000) % 60);
+    document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerText = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    document.getElementById("minutes").innerText = Math.floor((distance / (1000 * 60)) % 60);
+    document.getElementById("seconds").innerText = Math.floor((distance / 1000) % 60);
   }
-
   updateCountdown();
 </script>
 
-<!-- ================= 最新消息 JSON / Accordion ================= -->
+<!-- ================= Scripts ================= -->
 <script src="../js/news.js"></script>
 
-<!-- ================= Header 行為控制 ================= -->
 <script>
+  /* Header Glass Effect */
   window.addEventListener("scroll", () => {
     const header = document.querySelector("#site-header header");
     if (!header) return;
-
     if (window.scrollY > 80) {
       header.classList.add("header-glass");
       header.classList.remove("header-transparent");
@@ -239,30 +234,13 @@
       header.classList.remove("header-glass");
     }
   });
-
-  document.addEventListener("click", (e) => {
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector("nav.main-nav");
-
-    if (!toggle || !nav) return;
-    if (toggle.contains(e.target)) {
-      nav.classList.toggle("active");
-    }
-  });
 </script>
 
-<!-- ===== Footer (include) ===== -->
 <div id="site-footer"></div>
 
 <script src="../js/include.js"></script>
 <script src="../js/menu.js"></script>
 <script src="../js/hero-slider.js"></script>
-
-<script>
-  loadHTML("#site-header", "../includes/header-en.html");
-  loadHTML("#site-footer", "../includes/footer-en.html");
-</script>
-
 
 </body>
 </html>
