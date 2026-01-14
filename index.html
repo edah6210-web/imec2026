@@ -5,32 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Medical Education Conference 2026</title>
 
-  <!-- 主樣式 -->
+  <!-- Main Styles -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/hero-slider.css" />
 
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  crossorigin="anonymous"
-/>
-
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+  />
 </head>
 
 <body>
 
-<!-- ===== Header (include) ===== -->
+<!-- ================= Header (Include) ================= -->
 <div id="site-header"></div>
+
+<!-- Language Switch -->
 <div class="lang-switch">
+  <a href="#" id="lang-zh">中文</a>
+  <span class="divider">|</span>
   <a href="#" id="lang-en">EN</a>
 </div>
-
 
 <!-- ================= Hero ================= -->
 <section class="hero hero-split hero-light">
   <div class="hero-inner">
 
-    <!-- 左側：白卡文字 -->
+    <!-- Text Card -->
     <div class="hero-card">
       <h1>
         <span class="hero-highlight">全球視野、在地實踐</span>
@@ -38,16 +41,20 @@
       <h2>醫學教育與教育研究的趨勢</h2>
 
       <h3>
-        From globalization to glocalization : current trends in medical education
+        From globalization to glocalization: current trends in medical education
         and educational research for adapting international standards to local needs
       </h3>
-<br>
+
+      <br>
+
       <p class="event-info">
         <i class="fa-regular fa-calendar"></i> 2026/01/31 (SAT)<br />
         <i class="fa-solid fa-location-dot"></i> 義大癌治療醫院 六樓大講堂
       </p>
-<br>
-      <!-- 倒數計時 -->
+
+      <br>
+
+      <!-- Countdown -->
       <div class="countdown">
         <div class="time-box">
           <span id="days">00</span>
@@ -74,7 +81,7 @@
       </a>
     </div>
 
-    <!-- 右側：插圖 -->
+    <!-- Image -->
     <div class="hero-image">
       <img
         src="assets/images/hero-medical-illustration.jpg"
@@ -84,11 +91,8 @@
 
   </div>
 </section>
-<br>
 
-<!-- =============================
-     HERO SPEAKER SLIDER
-============================== -->
+<!-- ================= Hero Speaker Slider ================= -->
 <section class="hero-slider">
 
   <div class="slides">
@@ -106,11 +110,11 @@
       </div>
     </a>
 
-    <!-- Invited Speakers 1 -->
+    <!-- Invited Speakers -->
     <a href="speakers.html" class="slide"
        style="background-image:url('assets/speakers/yu-che-chang.png')">
       <div class="hero-overlay container">
-        <span class="hero-badge international">Invited Speakers</span>
+        <span class="hero-badge international">Invited Speaker</span>
         <h1>張玉喆 教授</h1>
         <p class="hero-meta">
           長庚醫學教育研究中心副主任<br>
@@ -119,46 +123,43 @@
       </div>
     </a>
 
-    <!-- Invited Speakers 2 -->
     <a href="speakers.html" class="slide"
        style="background-image:url('assets/speakers/cheng-ting-hsiao.png')">
       <div class="hero-overlay container">
-        <span class="hero-badge international">Invited Speakers</span>
+        <span class="hero-badge international">Invited Speaker</span>
         <h1>蕭政廷 教授</h1>
         <p class="hero-meta">
-          嘉義長庚紀念醫院<br>
+          嘉義長庚紀念醫院
         </p>
       </div>
     </a>
 
-    <!-- Invited Speakers 3 -->
     <a href="speakers.html" class="slide"
        style="background-image:url('assets/speakers/cheng-wen-chen.png')">
       <div class="hero-overlay container">
-        <span class="hero-badge international">Invited Speakers</span>
+        <span class="hero-badge international">Invited Speaker</span>
         <h1>陳正文 教授</h1>
         <p class="hero-meta">
-          天主教耕莘醫院行政副院長<br>
-                 </p>
+          天主教耕莘醫院 行政副院長
+        </p>
       </div>
     </a>
 
-     <!-- Invited Speakers 4 -->
     <a href="speakers.html" class="slide"
        style="background-image:url('assets/speakers/yu-chih-lin.png')">
       <div class="hero-overlay container">
-        <span class="hero-badge international">Invited Speakers</span>
+        <span class="hero-badge international">Invited Speaker</span>
         <h1>林育志 教授</h1>
         <p class="hero-meta">
-          高雄醫學大學附設中和紀念醫院臨床教育訓練部副主任
-<br>
-                 </p>
+          高雄醫學大學附設中和紀念醫院<br>
+          臨床教育訓練部副主任
+        </p>
       </div>
     </a>
 
   </div>
 
-  <!-- dots - 修正為 5 個點以對應 5 張投影片 -->
+  <!-- Slider Dots -->
   <div class="slider-dots">
     <span class="dot active"></span>
     <span class="dot"></span>
@@ -169,8 +170,7 @@
 
 </section>
 
-
-<!-- ================= 最新消息 ================= -->
+<!-- ================= Latest News ================= -->
 <section class="section">
   <div class="section-card">
     <h2>最新消息</h2>
@@ -178,7 +178,7 @@
   </div>
 </section>
 
-<!-- ================= 主辦 / 協辦 ================= -->
+<!-- ================= Organizers ================= -->
 <section class="section">
   <div class="section-card">
 
@@ -198,58 +198,40 @@
   </div>
 </section>
 
-<!-- ================= 倒數計時 ================= -->
+<!-- ================= Footer ================= -->
+<div id="site-footer"></div>
+
+<!-- ================= Scripts ================= -->
+<script src="js/include.js"></script>
+<script src="js/news.js"></script>
+<script src="js/hero-slider.js"></script>
+
+<!-- Countdown Script -->
 <script>
   const targetDate = new Date("2026-01-31T09:00:00").getTime();
-  const timer = setInterval(updateCountdown, 1000);
 
   function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
+    const daysEl = document.getElementById("days");
+    if (!daysEl) return;
 
-    if (distance < 0) {
-      clearInterval(timer);
-      return;
-    }
+    const now = Date.now();
+    const diff = targetDate - now;
 
-    document.getElementById("days").innerText =
-      Math.floor(distance / (1000 * 60 * 60 * 24));
-    document.getElementById("hours").innerText =
-      Math.floor((distance / (1000 * 60 * 60)) % 24);
-    document.getElementById("minutes").innerText =
-      Math.floor((distance / (1000 * 60)) % 60);
-    document.getElementById("seconds").innerText =
-      Math.floor((distance / 1000) % 60);
+    if (diff < 0) return;
+
+    document.getElementById("days").textContent =
+      Math.floor(diff / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").textContent =
+      Math.floor((diff / (1000 * 60 * 60)) % 24);
+    document.getElementById("minutes").textContent =
+      Math.floor((diff / (1000 * 60)) % 60);
+    document.getElementById("seconds").textContent =
+      Math.floor((diff / 1000) % 60);
   }
 
   updateCountdown();
+  setInterval(updateCountdown, 1000);
 </script>
-
-<script src="js/news.js"></script>
-
-<!-- ================= Header 行為控制 ================= -->
-<script>
-  /* Header 捲動玻璃效果 */
-  window.addEventListener("scroll", () => {
-    const header = document.querySelector("#site-header header");
-    if (!header) return;
-
-    if (window.scrollY > 80) {
-      header.classList.add("header-glass");
-      header.classList.remove("header-transparent");
-    } else {
-      header.classList.add("header-transparent");
-      header.classList.remove("header-glass");
-    }
-  });
-</script>
-
-<!-- ===== Footer & Scripts ===== -->
-<div id="site-footer"></div>
-<script src="js/include.js"></script>
-<script src="js/menu.js"></script>
-<script src="js/hero-slider.js"></script>
-
 
 </body>
 </html>
