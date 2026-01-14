@@ -149,7 +149,7 @@
           <li>
             <i class="fa-solid fa-video"></i>
             <span>
-              <strong>線上視訊（Online）：</strong><br />
+              <strong>線上視訊（Online）：-由於視訊名額已滿，歡迎報名現場參加-</strong><br />
               報名完成後，將於會議前兩天以 Email 寄送視訊連結。
             </span>
           </li>
@@ -199,8 +199,21 @@
 <!-- ===== Footer（共用） ===== -->
 <div id="site-footer"></div>
 
+<!-- 載入共用腳本 -->
 <script src="js/include.js"></script>
 <script src="js/menu.js"></script>
+
+<!-- 呼叫函式以載入 Header 和 Footer 內容 -->
+<script>
+  // 假設 include.js 裡面的載入函式名稱為 loadHTML 或類似名稱
+  // 如果您不確定名稱，請檢查 include.js 檔案內容
+  if (typeof loadHTML === 'function') {
+    loadHTML(); 
+  } else {
+    // 這裡可以新增其他載入邏輯，例如使用 jQuery 或原生的 fetch
+    console.warn('loadHTML function not found, header/footer might not load.');
+  }
+</script>
 
 </body>
 </html>
