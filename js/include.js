@@ -1,14 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =============================
-     Detect base path (GitHub Pages safe)
+     Get GitHub repo base path
      e.g. /imec2026/index.html → /imec2026
   ============================== */
-  const pathParts = window.location.pathname.split("/").filter(Boolean);
-  const repoBase = pathParts.length > 0 ? `/${pathParts[0]}` : "";
+  const path = window.location.pathname;
+  const segments = path.split("/").filter(Boolean);
 
-  const isEN = window.location.pathname.includes("/en/");
-  const fileName = pathParts[pathParts.length - 1] || "index.html";
+  // repo name is always the first segment on GitHub Pages project site
+  const repoBase = segments.length > 0 ? `/${segments[0]}` : "";
+
+  const isEN = segments.includes("en");
+  const fileName = segments[segments.length - 1] || "index.html";
 
   /* =============================
      Correct include paths
@@ -26,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ============================== */
   fetch(headerPath)
     .then(res => {
-      if (!res.ok) throw new Error("Header include failed: " + headerPath);
+      if (!res.ok) throw new Error(`Header include failed: ${headerPath}`);
       return res.text();
     })
     .then(html => {
@@ -34,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!headerContainer) return;
 
       headerContainer.innerHTML = html;
+
       initHeaderBehavior();
       initLanguageSwitch();
       setActiveMenu();
@@ -45,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ============================== */
   fetch(footerPath)
     .then(res => {
-      if (!res.ok) throw new Error("Footer include failed: " + footerPath);
+      if (!res.ok) throw new Error(`Footer include failed: ${footerPath}`);
       return res.text();
     })
     .then(html => {
@@ -68,13 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!header || !menuToggle || !nav) return;
 
     const onScroll = () => {
-      if (window.scrollY > 60) {
-        header.classList.add("header-glass");
-        header.classList.remove("header-transparent");
-      } else {
-        header.classList.add("header-transparent");
-        header.classList.remove("header-glass");
-      }
+      header.classList.toggle("header-glass", window.scrollY > 60);
+      header.classList.toggle("header-transparent", window.scrollY <= 60);
     };
 
     onScroll();
