@@ -11,9 +11,7 @@
 
   <!-- Font Awesome -->
   <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    crossorigin="anonymous"
+    "anonymous"
   />
 </head>
 
@@ -219,6 +217,7 @@
 </script>
 
 <!-- ================= Scripts ================= -->
+<!-- 僅在此處載入 news.js -->
 <script src="../js/news.js"></script>
 
 <script>
@@ -239,10 +238,10 @@
 <div id="site-footer"></div>
 
 <script src="../js/include.js"></script>
-<script src="../js/news.js"></script>
-  <script>loadNews('en');</script>
 <script src="../js/hero-slider.js"></script>
+
+<!-- 在 DOM 元素載入後，呼叫 news.js 的函式 -->
+<script>loadNews('en');</script>
 
 </body>
 </html>
-
