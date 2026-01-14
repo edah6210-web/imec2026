@@ -1,26 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =============================
-     Language detection
+     Detect base path (GitHub Pages safe)
+     e.g. /imec2026/index.html → /imec2026
   ============================== */
-  const isEN = location.pathname.startsWith("/en/");
-  const currentPath = window.location.pathname;
-  const fileName = currentPath.split("/").pop() || "index.html";
+  const pathParts = window.location.pathname.split("/").filter(Boolean);
+  const repoBase = pathParts.length > 0 ? `/${pathParts[0]}` : "";
 
+  const isEN = window.location.pathname.includes("/en/");
+  const fileName = pathParts[pathParts.length - 1] || "index.html";
+
+  /* =============================
+     Correct include paths
+  ============================== */
   const headerPath = isEN
-    ? "/includes/header-en.html"
-    : "/includes/header.html";
+    ? `${repoBase}/includes/header-en.html`
+    : `${repoBase}/includes/header.html`;
 
   const footerPath = isEN
-    ? "/includes/footer-en.html"
-    : "/includes/footer.html";
+    ? `${repoBase}/includes/footer-en.html`
+    : `${repoBase}/includes/footer.html`;
 
   /* =============================
      Load Header
   ============================== */
   fetch(headerPath)
     .then(res => {
-      if (!res.ok) throw new Error("Header include failed");
+      if (!res.ok) throw new Error("Header include failed: " + headerPath);
       return res.text();
     })
     .then(html => {
@@ -28,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!headerContainer) return;
 
       headerContainer.innerHTML = html;
-
       initHeaderBehavior();
       initLanguageSwitch();
       setActiveMenu();
@@ -40,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ============================== */
   fetch(footerPath)
     .then(res => {
-      if (!res.ok) throw new Error("Footer include failed");
+      if (!res.ok) throw new Error("Footer include failed: " + footerPath);
       return res.text();
     })
     .then(html => {
@@ -52,16 +57,16 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(err => console.error(err));
 
   /* =============================
-     Header behavior (single source)
+     Header behavior
   ============================== */
   function initHeaderBehavior() {
     const header = document.querySelector("#site-header header");
     const menuToggle = header?.querySelector(".menu-toggle");
     const nav = header?.querySelector("nav.main-nav");
+    const menuClose = header?.querySelector(".menu-close");
 
     if (!header || !menuToggle || !nav) return;
 
-    /* ===== Scroll glass effect ===== */
     const onScroll = () => {
       if (window.scrollY > 60) {
         header.classList.add("header-glass");
@@ -70,41 +75,33 @@ document.addEventListener("DOMContentLoaded", () => {
         header.classList.add("header-transparent");
         header.classList.remove("header-glass");
       }
-
-      const menuClose = header.querySelector(".menu-close");
-
-/* ===== 手機版 Menu Close (X) ===== */
-menuClose?.addEventListener("click", (e) => {
-  e.stopPropagation();
-  nav.classList.remove("active");
-});
-
     };
 
     onScroll();
     window.addEventListener("scroll", onScroll);
 
-    /* ===== Mobile menu toggle ===== */
-    menuToggle.addEventListener("click", (e) => {
+    menuToggle.addEventListener("click", e => {
       e.stopPropagation();
       nav.classList.toggle("active");
     });
 
-    /* Close menu after clicking link (mobile) */
+    menuClose?.addEventListener("click", e => {
+      e.stopPropagation();
+      nav.classList.remove("active");
+    });
+
     nav.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         nav.classList.remove("active");
       });
     });
 
-    /* Click outside to close menu (mobile) */
-    document.addEventListener("click", (e) => {
+    document.addEventListener("click", e => {
       if (!header.contains(e.target)) {
         nav.classList.remove("active");
       }
     });
 
-    /* Ensure desktop menu always visible */
     window.addEventListener("resize", () => {
       if (window.innerWidth > 991) {
         nav.classList.remove("active");
@@ -113,42 +110,29 @@ menuClose?.addEventListener("click", (e) => {
   }
 
   /* =============================
-     Language switch (ZH / EN)
+     Language switch
   ============================== */
   function initLanguageSwitch() {
     const langEN = document.getElementById("lang-en");
     const langZH = document.getElementById("lang-zh");
 
     if (langEN) {
-      langEN.href = "/en/" + fileName;
+      langEN.href = isEN ? fileName : `en/${fileName}`;
     }
 
     if (langZH) {
-      langZH.href = "/" + fileName;
+      langZH.href = isEN ? `../${fileName}` : fileName;
     }
   }
 
   /* =============================
-     Active menu highlight
+     Active menu
   ============================== */
   function setActiveMenu() {
-    const navLinks = document.querySelectorAll("#site-header nav a");
-
-    navLinks.forEach(link => {
-      const linkPath = link.getAttribute("href");
-
-      if (!linkPath) return;
-
-      if (
-        linkPath.endsWith("/" + fileName) ||
-        linkPath === fileName ||
-        linkPath === "/" + fileName ||
-        linkPath === "/en/" + fileName
-      ) {
-        link.classList.add("is-active");
-      } else {
-        link.classList.remove("is-active");
-      }
+    document.querySelectorAll("#site-header nav a").forEach(link => {
+      const href = link.getAttribute("href");
+      if (!href) return;
+      link.classList.toggle("is-active", href.endsWith(fileName));
     });
   }
 
